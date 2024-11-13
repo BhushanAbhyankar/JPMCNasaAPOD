@@ -60,3 +60,8 @@ Home Screen
 Date Selection Screen
 -
 ![Simulator Screenshot - iPhone 16 Pro Max - 2024-11-13 at 02 12 47](https://github.com/user-attachments/assets/ded28382-8c8c-45a0-ad47-103f536ef647)
+
+# Video of App
+
+https://github.com/user-attachments/assets/97f9ed62-cfc7-42e8-8727-2173321c5462
+

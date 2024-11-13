@@ -20,6 +20,8 @@ struct DateSelectionView: View {
                 .foregroundColor(.nasaTextColor)
                 .padding(.top)
                 .multilineTextAlignment(.center)
+                .accessibilityLabel("Select a Date")
+                .accessibilityHint("Choose a date to view the Astronomy Picture of the Day")
             
             DatePicker("Select Date", selection: $selectedDate, displayedComponents: .date)
                 .datePickerStyle(GraphicalDatePickerStyle())
@@ -27,6 +29,8 @@ struct DateSelectionView: View {
                 .background(Color.nasaBackgroundColor.opacity(0.8))
                 .cornerRadius(10)
                 .padding(.horizontal)
+                .accessibilityLabel("Date Picker")
+                .accessibilityHint("Scroll to select a date")
 
             Button(action: {
                 let dateFormatter = DateFormatter()
@@ -46,6 +50,8 @@ struct DateSelectionView: View {
                     .foregroundColor(Color.nasaTextColor)
                     .cornerRadius(10)
                     .padding(.horizontal)
+                    .accessibilityLabel("Done button")
+                    .accessibilityHint("Select this date and close the date picker")
             }
             Spacer()
         }

@@ -25,6 +25,8 @@ struct PicOfTheDayView: View {
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .padding(.top, 50)
                             .foregroundColor(.nasaAccentColor)
+                            .accessibilityLabel("Loading")
+                            .accessibilityHint("Loading the Astronomy Picture of the Day")
 
                     case .loaded(let data):
                         displayPicView(picOfDayData: data)
@@ -54,6 +56,8 @@ struct PicOfTheDayView: View {
                         Image(systemName: "calendar")
                             .font(.title2)
                             .foregroundStyle(.nasaAccent)
+                            .accessibilityLabel("Select Date")
+                            .accessibilityHint("Opens the date selection to view another Astronomy Picture of the Day")
                     }
 
                 }
@@ -70,6 +74,8 @@ struct PicOfTheDayView: View {
             Text(selectedDateString)
                 .font(.headline)
                 .foregroundColor(.nasaTextColor.opacity(0.7))
+                .accessibilityLabel("Date")
+                .accessibilityValue(selectedDateString)
             
             //Title
             Text(picOfDayData.title)
@@ -78,12 +84,18 @@ struct PicOfTheDayView: View {
                 .foregroundColor(.nasaTextColor)
                 .multilineTextAlignment(.leading)
                 .padding(.bottom, 10)
+                .accessibilityLabel("Title")
+                .accessibilityValue(picOfDayData.title)
         }
         .padding(.horizontal)
         
         //Image or Video
         if picOfDayData.mediaType == "image" {
-            loadImageFromURL(imageURL: picOfDayData.url)                .padding(.horizontal)
+            loadImageFromURL(imageURL: picOfDayData.url)
+                .padding(.horizontal)
+                .accessibilityLabel("Astronomy Picture")
+                .accessibilityHint("Image for the selected date")
+
         } else if picOfDayData.mediaType == "video" {
             if let url = URL(string: picOfDayData.url){
                 NASAVideoPlayerView(videoURL: url)
@@ -91,10 +103,14 @@ struct PicOfTheDayView: View {
                     .cornerRadius(12)
                     .shadow(radius: 5)
                     .padding(.horizontal)
+                    .accessibilityLabel("Astronomy Video")
+                    .accessibilityHint("Video for the selected date")
             } else {
                 Text("Invalid video link")
                     .foregroundColor(.nasaAccentColor)
                     .padding(.horizontal)
+                    .accessibilityLabel("Invalid video URL")
+                    .accessibilityHint("The video URL for this date is invalid")
             }
         }
         
@@ -106,6 +122,8 @@ struct PicOfTheDayView: View {
             .padding(.horizontal)
             .padding(.top, 10)
             .padding(.bottom, 20)
+            .accessibilityLabel("Explanation")
+            .accessibilityValue(picOfDayData.explanation)
     }
     
     @ViewBuilder
@@ -117,6 +135,8 @@ struct PicOfTheDayView: View {
                 .frame(maxWidth: .infinity)
                 .cornerRadius(12)
                 .shadow(radius: 5)
+                .accessibilityLabel("Loading image")
+
         } else {
             ProgressView()
                 .frame(height: 300)
@@ -135,12 +155,16 @@ struct PicOfTheDayView: View {
             .fontWeight(.semibold)
             .foregroundColor(.nasaAccentColor)
             .padding(.top, 20)
+            .accessibilityLabel("Error")
+            .accessibilityValue("Something went wrong")
 
         Text(error.localizedDescription)
             .font(.body)
             .foregroundColor(.nasaTextColor)
             .multilineTextAlignment(.center)
             .padding(.horizontal, 20)
+            .accessibilityLabel("Error details")
+            .accessibilityValue(error.localizedDescription)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

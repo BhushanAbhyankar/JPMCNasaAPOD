@@ -31,7 +31,7 @@ In the structure files contains: Model, View, ViewModel, Network, Repository and
 
 
 # Installation
-Can be used with Xcode 14 and above. Compatible with iPhone and iPad with minimum iOS version 16.0.
+Can be used with Xcode 16 and above. Compatible with iPhone and iPad with minimum iOS version 16.0.
 
 # Framework
 SwiftUI, AVKit 

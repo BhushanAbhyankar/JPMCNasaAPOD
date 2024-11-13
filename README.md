@@ -2,7 +2,7 @@
 Astronomy Picture of the Day App
 
 
-This is an iOS app that displays NASA's current day's APOD (Astronomy Picture of the Day). The app is written in Swift and uses Offline Caching for persistence and the MVVM architecture with the Repository pattern.
+This is an iOS app that displays NASA's current day's APOD (Astronomy Picture of the Day). The app is written in Swift and uses Offline Caching for persistence and following MVVM architecture with the Repository pattern.
 
 ## Project Description 
 
@@ -51,6 +51,12 @@ Units tests for success and failure situations. Mocked responses using FakeNetwo
 # Screenshots
 
 
-|List of JPMCNasaAPOD Screen|
-|---|---|
-| | |
+- List of JPMCNasaAPOD Screens
+
+Home Screen 
+-
+![Simulator Screenshot - iPhone 16 Pro Max - 2024-11-13 at 02 12 41](https://github.com/user-attachments/assets/1e793b1b-dca0-44f9-9530-90162b538e4a)
+
+Date Selection Screen
+-
+![Simulator Screenshot - iPhone 16 Pro Max - 2024-11-13 at 02 12 47](https://github.com/user-attachments/assets/ded28382-8c8c-45a0-ad47-103f536ef647)
